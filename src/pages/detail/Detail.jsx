@@ -126,7 +126,7 @@ const Detail = () => {
                       {genre.name}
                     </span>
                   ))}
-                <span className="genres__item" onClick={showModal}>
+                <span style= {{cursor: "pointer"}} className="genres__item" onClick={showModal}>
                   Add To Wishlist
                 </span>
               </div>
