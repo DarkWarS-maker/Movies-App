@@ -1,8 +1,8 @@
 import { message } from "antd";
 import axios from "axios";
 
-let baseUrl = "https://movies-app-backend-mongodb.herokuapp.com/api";
-
+// let baseUrl = "https://movies-app-backend-mongodb.herokuapp.com/api";
+let baseUrl = "https://movies-app-backend-mongodb1.herokuapp.com/api";
 export const SignUp = async (data) => {
   console.log(data);
   await axios
@@ -37,10 +37,10 @@ export const CreateWatchList = async (data) => {
   console.log(data);
   await axios
     .post(baseUrl + "/favourites/create", data, {
-      headers:{
-                     'Content-Type':'application/json',
-                     Authorization : `Bearer ${localStorage.getItem("login")}`
-                 }
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("login")}`,
+      },
     })
     .then((res) => {
       console.log(res);
@@ -53,10 +53,10 @@ export const PushToWatchList = async (data) => {
   console.log(data);
   await axios
     .post(baseUrl + "/favourites/update", data, {
-     headers:{
-                     'Content-Type':'application/json',
-                     Authorization : `Bearer ${localStorage.getItem("login")}`
-                 }
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("login")}`,
+      },
     })
     .then((res) => console.log(res))
     .catch((err) => message.error("Internal Error"));
@@ -66,10 +66,10 @@ export const ChangePublicAvailibility = async (data) => {
   console.log(data);
   await axios
     .post(baseUrl + "/favourites/changeStatus", data, {
-    headers:{
-                     'Content-Type':'application/json',
-                     Authorization : `Bearer ${localStorage.getItem("login")}`
-                 }
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("login")}`,
+      },
     })
     .then((res) => console.log(res))
     .catch((err) => message.error("Internal Error"));
@@ -78,10 +78,10 @@ export const ChangePublicAvailibility = async (data) => {
 export const getWatchlists = async () => {
   await axios
     .get(baseUrl + "/favourites/getWatchlists", {
-     headers:{
-                     'Content-Type':'application/json',
-                     Authorization : `Bearer ${localStorage.getItem("login")}`
-                 }
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("login")}`,
+      },
     })
     .then((res) => {
       //console.log(JSON.stringify(res.data?.watchlist));
