@@ -6,7 +6,7 @@ let baseUrl = "https://movies-app-backend-mongodb.herokuapp.com/api";
 export const SignUp = async (data) => {
   console.log(data);
   await axios
-    .post(baseUrl + "/user/signin", data, {
+    .post(baseUrl + "/user/signin/", data, {
       withCredentials: true,
     })
     .then((res) => {
@@ -19,7 +19,7 @@ export const SignUp = async (data) => {
 export const Login = async (data) => {
   console.log(data);
   await axios
-    .post(baseUrl + "/user/login", data, {
+    .post(baseUrl + "/user/login/", data, {
       withCredentials: true,
     })
     .then((res) => {
@@ -56,7 +56,7 @@ export const CreateWatchList = async (data) => {
 export const PushToWatchList = async (data) => {
   console.log(data);
   await axios
-    .post(baseUrl + "/favourites/update", data, {
+    .post(baseUrl + "/favourites/update/", data, {
      headers:{
                      'Content-Type':'application/json',
                      Authorization : `Bearer ${localStorage.getItem("login")}`
@@ -69,7 +69,7 @@ export const PushToWatchList = async (data) => {
 export const ChangePublicAvailibility = async (data) => {
   console.log(data);
   await axios
-    .post(baseUrl + "/favourites/changeStatus", data, {
+    .post(baseUrl + "/favourites/changeStatus/", data, {
     headers:{
                      'Content-Type':'application/json',
                      Authorization : `Bearer ${localStorage.getItem("login")}`
@@ -81,7 +81,7 @@ export const ChangePublicAvailibility = async (data) => {
 
 export const getWatchlists = async () => {
   await axios
-    .get(baseUrl + "/favourites/getWatchlists", {
+    .get(baseUrl + "/favourites/getWatchlists/", {
      headers:{
                      'Content-Type':'application/json',
                      Authorization : `Bearer ${localStorage.getItem("login")}`
