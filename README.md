@@ -10,3 +10,8 @@
 # [Backend GitHub Link](https://github.com/DarkWarS-maker/Movies-App-Backend)
     https://github.com/DarkWarS-maker/Movies-App-Backend
     
+In the project directory, you can run:
+
+### `npm install`
+
+### `npm start`
